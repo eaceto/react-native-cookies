@@ -29,6 +29,10 @@ module.exports = {
   clearAll: (useWebKit = false) => CookieManager.clearAll(useWebKit),
   get: (url, useWebKit = false) => CookieManager.get(url, useWebKit),
   set: (cookie, useWebKit = false) => CookieManager.set(cookie, useWebKit),
+  getAllIncludingWebKit: (useWebKit = true) => CookieManager.getAll(useWebKit),
+  clearAllIncludingWebKit: (useWebKit = true) => CookieManager.clearAll(useWebKit),
+  getIncludingWebKit: (url, useWebKit = true) => CookieManager.get(url, useWebKit),
+  setIncludingWebKit: (cookie, useWebKit = true) => CookieManager.set(cookie, useWebKit),
 };
 
 for (var i = 0; i < functions.length; i++) {
