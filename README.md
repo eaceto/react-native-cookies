@@ -134,6 +134,28 @@ CookieManager.clearByName('cookie_name')
 
 ```
 
+By default all these methods does not use WebKit. For including WebKit cookies in all the operations, use the following methods.
+
+```javascript
+CookieManager.getIncludingWebKit('http://example.com')
+  .then((res) => {
+    console.log('CookieManager.getIncludingWebKit =>', res); // => 'user_session=abcdefg; path=/;'
+  });
+
+// list cookies (IOS ONLY)
+CookieManager.getAllIncludingWebKit()
+  .then((res) => {
+    console.log('CookieManager.getAllIncludingWebKit =>', res);
+  });
+
+// clear cookies
+CookieManager.clearAllIncludingWebKit()
+  .then((res) => {
+    console.log('CookieManager.clearAllIncludingWebKit =>', res);
+  });
+
+```
+
 #### WebKit-Support (iOS only)
 React Native comes with a WebView component, which uses UIWebView on iOS. Introduced in iOS 8 Apple implemented the WebKit-Support with all the performance boost. 
 
